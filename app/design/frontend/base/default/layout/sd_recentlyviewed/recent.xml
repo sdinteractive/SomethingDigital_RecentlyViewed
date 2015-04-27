@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout>
+	<catalog_product_view>
+		<reference name="before_body_end">
+			<block name="sd.recently.viewed" type="reports/product_viewed" template="sd_recentlyviewed/product.phtml"/>
+		</reference>
+	</catalog_product_view>
+</layout>

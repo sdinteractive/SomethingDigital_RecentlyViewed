@@ -16,6 +16,12 @@
         <routers></routers>
         <translate>
         </translate>
-        <layout></layout>
+        <layout>
+            <updates>
+                <sd_recentlyviewed module="SomethingDigital_RecentlyViewed">
+                    <file>sd_recentlyviewed/recent.xml</file>
+                </sd_recentlyviewed>
+            </updates>
+        </layout>
     </frontend>
 </config>
