@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SomethingDigital_RecentlyViewed>
+             <version>0.1.0</version>
+        </SomethingDigital_RecentlyViewed>
+    </modules>
+    <admin>
+    </admin>
+    <global>
+    </global>
+    <adminhtml>
+    </adminhtml>
+    <frontend>
+        <events></events>
+        <routers></routers>
+        <translate>
+        </translate>
+        <layout></layout>
+    </frontend>
+</config>

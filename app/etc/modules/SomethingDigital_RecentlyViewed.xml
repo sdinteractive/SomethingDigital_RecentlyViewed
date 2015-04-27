@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SomethingDigital_RecentlyViewed>
+             <active>true</active>
+             <codePool>local</codePool>
+             <depends>
+             </depends>
+        </SomethingDigital_RecentlyViewed>
+    </modules>
+</config>
