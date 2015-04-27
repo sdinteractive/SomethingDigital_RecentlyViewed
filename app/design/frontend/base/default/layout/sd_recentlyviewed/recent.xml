@@ -1,6 +1,12 @@
 <?xml version="1.0"?>
 <layout>
 	<catalog_product_view>
+		<reference name="head">
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/sd_recentlyviewed/recent.js</name>
+			</action>
+		</reference>
 		<reference name="before_body_end">
 			<block name="sd.recently.viewed" type="reports/product_viewed" template="sd_recentlyviewed/product.phtml"/>
 		</reference>

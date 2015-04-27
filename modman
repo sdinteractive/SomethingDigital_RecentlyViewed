@@ -2,4 +2,5 @@
 app/code/community/SomethingDigital/RecentlyViewed   app/code/community/SomethingDigital/RecentlyViewed
 app/design/frontend/base/default/layout/sd_recentlyviewed    app/design/frontend/base/default/layout/sd_recentlyviewed
 app/design/frontend/base/default/template/sd_recentlyviewed     app/design/frontend/base/default/template/sd_recentlyviewed
+skin/frontend/base/default/js/sd_recentlyviewed    skin/frontend/base/default/js/sd_recentlyviewed
 app/etc/modules/*.xml    app/etc/modules/
