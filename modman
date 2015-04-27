@@ -1,0 +1,5 @@
+#SomethingDigital_RecentlyViewed
+app/code/community/SomethingDigital/RecentlyViewed   app/code/community/SomethingDigital/RecentlyViewed
+app/design/frontend/base/default/layout/sd_recentlyviewed    app/design/frontend/base/default/layout/sd_recentlyviewed
+app/design/frontend/base/default/templates/sd_recentlyviewed     app/design/frontend/base/default/templates/sd_recentlyviewed
+app/etc/modules/*.xml    app/etc/modules/

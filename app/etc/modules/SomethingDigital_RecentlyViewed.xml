@@ -3,7 +3,7 @@
     <modules>
         <SomethingDigital_RecentlyViewed>
              <active>true</active>
-             <codePool>local</codePool>
+             <codePool>community</codePool>
              <depends>
              </depends>
         </SomethingDigital_RecentlyViewed>
