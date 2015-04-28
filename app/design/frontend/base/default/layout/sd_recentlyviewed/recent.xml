@@ -1,5 +1,12 @@
 <?xml version="1.0"?>
 <layout>
+	<default>
+		<remove name="left.reports.product.viewed"/>
+		<remove name="right.reports.product.viewed"/>
+		<reference name="right">
+			<block type="reports/product_viewed" before="right.permanent.callout" name="sd.recently.viewed.products" template="sd_recentlyviewed/items.phtml" />
+		</reference>
+	</default>
 	<catalog_product_view>
 		<reference name="head">
 			<action method="addItem">
