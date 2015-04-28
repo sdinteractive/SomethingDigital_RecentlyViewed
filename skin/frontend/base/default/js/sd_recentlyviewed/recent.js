@@ -61,38 +61,26 @@ SomethingDigitalRecentlyViewed.prototype = {
 		var items = this.getLoadedStorage();
 
 		return items.map(function(a){
-			return a.html;
-		}).join('');
+				return a.html;
+			}).join('');
 	},
 
 	render: function(){
-		var rvTemplate = $('recently-viewed-product-list');
 
-
-		if(!rvTemplate){
+		if(!this.items || this.items.length < 1){
 			return;
 		}
 
-		var html = rvTemplate.innerHTML;
+		var rvTemplate = $('recently-viewed-product-list'),
+			target = $$('.col-right.sidebar')[0];
 
-
-		// console.log(this.getRenderedItems());
-
-		var target = $$('.col-right.sidebar')[0];
-
-		if(!target){
+		if(!rvTemplate || !target){
 			return;
 		}
 
+		var html = rvTemplate.innerHTML.replace('{{items}}',this.getRenderedItems());
 		$(target).insert({top: html});
 
-		var rvElement = $('recently-viewed-items');
-
-		if(!rvElement){
-			return;
-		}
-
-		rvElement.innerHTML = this.getRenderedItems();
 	}
 }
 
