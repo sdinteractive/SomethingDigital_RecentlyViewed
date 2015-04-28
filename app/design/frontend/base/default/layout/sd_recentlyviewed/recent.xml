@@ -22,6 +22,7 @@
 
 
 	<catalog_product_view>
+		<update handle="sdrecentlyviewed"/>
 		<reference name="head">
 			<update handle="sdrecentlyviewed"/>
 			<block name="sd.recent.productid" type="core/template" template="sd_recentlyviewed/productid.phtml"/>

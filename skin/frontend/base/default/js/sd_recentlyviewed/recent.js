@@ -3,6 +3,7 @@
 var SomethingDigitalRecentlyViewed = Class.create();
 
 SomethingDigitalRecentlyViewed.prototype = {
+	items: null,
 	initialize: function(){
 		this.initStorage();
 		this.render();
@@ -14,7 +15,10 @@ SomethingDigitalRecentlyViewed.prototype = {
 	},
 
 	getLoadedStorage: function(){
-		return JSON.parse(localStorage.getItem('recently-viewed')) || [];
+		if(!this.items){
+			this.items = JSON.parse(localStorage.getItem('recently-viewed')) || [];
+		}
+		return this.items;
 	},
 
 	reloadStorage: function(recentlyViewed){
@@ -37,6 +41,7 @@ SomethingDigitalRecentlyViewed.prototype = {
 		//get unique keys
 		var uniqueKeys = recentlyViewed.reduce(this.reduceRecent, []);
 
+
 		//add if current product is not in the unique keys
 		if(uniqueKeys.indexOf(sdRecentlyViewed.productId) === -1){
 			recentlyViewed.push({
@@ -52,11 +57,42 @@ SomethingDigitalRecentlyViewed.prototype = {
 		return recentlyViewed;
 	},
 
-	render: function(){
-		var target = $$('.col-right.sidebar'),
-			html = $('recently-viewed-product-list').innerHTML;
+	getRenderedItems: function(){
+		var items = this.getLoadedStorage();
 
-		// target.insert({top: html});
+		return items.map(function(a){
+			return a.html;
+		}).join('');
+	},
+
+	render: function(){
+		var rvTemplate = $('recently-viewed-product-list');
+
+
+		if(!rvTemplate){
+			return;
+		}
+
+		var html = rvTemplate.innerHTML;
+
+
+		// console.log(this.getRenderedItems());
+
+		var target = $$('.col-right.sidebar')[0];
+
+		if(!target){
+			return;
+		}
+
+		$(target).insert({top: html});
+
+		var rvElement = $('recently-viewed-items');
+
+		if(!rvElement){
+			return;
+		}
+
+		rvElement.innerHTML = this.getRenderedItems();
 	}
 }
 
