@@ -1,22 +1,45 @@
 <?xml version="1.0"?>
 <layout>
+
+
 	<default>
 		<remove name="left.reports.product.viewed"/>
 		<remove name="right.reports.product.viewed"/>
-		<reference name="right">
+		<reference name="before_body_end">
 			<block type="reports/product_viewed" before="right.permanent.callout" name="sd.recently.viewed.products" template="sd_recentlyviewed/items.phtml" />
 		</reference>
 	</default>
-	<catalog_product_view>
+
+
+	<sdrecentlyviewed>
 		<reference name="head">
 			<action method="addItem">
 				<type>skin_js</type>
 				<name>js/sd_recentlyviewed/recent.js</name>
 			</action>
+		</reference>
+	</sdrecentlyviewed>
+
+
+	<catalog_product_view>
+		<reference name="head">
+			<update handle="sdrecentlyviewed"/>
 			<block name="sd.recent.productid" type="core/template" template="sd_recentlyviewed/productid.phtml"/>
 		</reference>
 		<reference name="before_body_end">
 			<block name="sd.recently.viewed" type="reports/product_viewed" template="sd_recentlyviewed/product.phtml"/>
 		</reference>
 	</catalog_product_view>
+
+
+	<catalog_category_layered>
+		<update handle="sdrecentlyviewed"/>
+	</catalog_category_layered>
+
+
+	<catalog_category_default>
+		<update handle="sdrecentlyviewed"/>
+	</catalog_category_default>
+
+
 </layout>

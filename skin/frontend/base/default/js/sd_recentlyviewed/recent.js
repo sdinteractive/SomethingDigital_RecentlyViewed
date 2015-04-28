@@ -1,28 +1,47 @@
+"use strict";
+
 var SomethingDigitalRecentlyViewed = Class.create();
 
 SomethingDigitalRecentlyViewed.prototype = {
 	initialize: function(){
-		document.observe('dom:loaded',this.initLocalStorage);
+		this.initStorage();
 		this.render();
 	},
 
-	initLocalStorage: function(){
-		//get localstorage and append
-		var recentlyViewed = JSON.parse(localStorage.getItem('recently-viewed')) || [];
+	initStorage: function(){
+		var recentlyViewed = this.getRecentlyViewed(this.getLoadedStorage());
+		this.reloadStorage(recentlyViewed);
+	},
+
+	getLoadedStorage: function(){
+		return JSON.parse(localStorage.getItem('recently-viewed')) || [];
+	},
+
+	reloadStorage: function(recentlyViewed){
+		localStorage.setItem('recently-viewed',JSON.stringify(recentlyViewed));
+	},
+
+	reduceRecent: function(memo,a){
+		if(memo.indexOf(a.id) === -1){
+			memo.push(a.id);
+		}
+		return memo;
+	},
+
+	getRecentlyViewed: function(recentlyViewed){
+
+		if(typeof sdRecentlyViewed == 'undefined'){
+			return recentlyViewed;
+		}
 
 		//get unique keys
-		var uniqueKeys = recentlyViewed.reduce(function(memo,a){
-			if(memo.indexOf(a.id) === -1){
-				memo.push(a.id);
-			}
-			return memo;
-		}, []);
+		var uniqueKeys = recentlyViewed.reduce(this.reduceRecent, []);
 
 		//add if current product is not in the unique keys
 		if(uniqueKeys.indexOf(sdRecentlyViewed.productId) === -1){
 			recentlyViewed.push({
 				id: sdRecentlyViewed.productId,
-				html: document.getElementById('recently-viewed').innerHTML
+				html: $('recently-viewed').innerHTML
 			});
 
 			if(recentlyViewed.length > sdRecentlyViewed.maxDisplay){
@@ -30,12 +49,17 @@ SomethingDigitalRecentlyViewed.prototype = {
 			}
 		}
 
-		localStorage.setItem('recently-viewed',JSON.stringify(recentlyViewed));
+		return recentlyViewed;
 	},
 
 	render: function(){
-		console.log('rendered');
+		var target = $$('.col-right.sidebar'),
+			html = $('recently-viewed-product-list').innerHTML;
+
+		// target.insert({top: html});
 	}
 }
 
-new SomethingDigitalRecentlyViewed();
+document.observe('dom:loaded',function(){
+	new SomethingDigitalRecentlyViewed();
+});
