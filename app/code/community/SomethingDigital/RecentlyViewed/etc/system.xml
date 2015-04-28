@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+        <catalog>
+            <groups>
+                <recently_products>
+                    <fields>
+                        <insert_at translate="label">
+                            <label>Recently Viewed Container Location</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[NOTICE: Must be valid CSS selector]]></comment>
+                        </insert_at>
+                    </fields>
+                </recently_products>
+            </groups>
+        </catalog>
+    </sections>
+</config>
