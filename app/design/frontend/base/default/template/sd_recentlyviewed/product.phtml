@@ -1,5 +1,5 @@
 <?php $_product = Mage::registry('current_product'); ?>
-<div id="recently-viewed">
+<script id="recently-viewed" type="template/html">
     <li class="item">
         <a href="<?php echo $this->getProductUrl($_product) ?>">
             <span class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->resize(50, 50)->setWatermarkSize('30x10'); ?>" width="50" height="50" alt="<?php echo $this->escapeHtml($this->getProductName()) ?>" /></span>
@@ -12,4 +12,4 @@
             </p>
         </div>
     </li>
-</div>
+</script>
