@@ -24,4 +24,11 @@
             </updates>
         </layout>
     </frontend>
+    <default>
+        <catalog>
+            <recently_products>
+                <insert_at>.col-right.sidebar</insert_at>
+            </recently_products>
+        </catalog>
+    </default>
 </config>

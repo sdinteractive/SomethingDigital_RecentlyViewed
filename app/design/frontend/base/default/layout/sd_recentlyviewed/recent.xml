@@ -17,6 +17,7 @@
 				<type>skin_js</type>
 				<name>js/sd_recentlyviewed/recent.js</name>
 			</action>
+			<block name="sd.recent.productid" type="core/template" template="sd_recentlyviewed/productid.phtml"/>
 		</reference>
 	</sdrecentlyviewed>
 
@@ -25,7 +26,6 @@
 		<update handle="sdrecentlyviewed"/>
 		<reference name="head">
 			<update handle="sdrecentlyviewed"/>
-			<block name="sd.recent.productid" type="core/template" template="sd_recentlyviewed/productid.phtml"/>
 		</reference>
 		<reference name="before_body_end">
 			<block name="sd.recently.viewed" type="reports/product_viewed" template="sd_recentlyviewed/product.phtml"/>

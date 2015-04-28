@@ -43,7 +43,8 @@ SomethingDigitalRecentlyViewed.prototype = {
 
 
 		//add if current product is not in the unique keys
-		if(uniqueKeys.indexOf(sdRecentlyViewed.productId) === -1){
+		if(uniqueKeys.indexOf(sdRecentlyViewed.productId) === -1 && $('recently-viewed')){
+
 			recentlyViewed.push({
 				id: sdRecentlyViewed.productId,
 				html: $('recently-viewed').innerHTML
@@ -72,7 +73,7 @@ SomethingDigitalRecentlyViewed.prototype = {
 		}
 
 		var rvTemplate = $('recently-viewed-product-list'),
-			target = $$('.col-right.sidebar')[0];
+			target = $$(sdRecentlyViewed.insertAt)[0];
 
 		if(!rvTemplate || !target){
 			return;

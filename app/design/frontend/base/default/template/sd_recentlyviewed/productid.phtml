@@ -1,6 +1,14 @@
+<?php 
+$product    = Mage::registry('current_product');
+$category   = Mage::registry('current_category');
+$productId  = $product ? $product->getId() : null;
+$categoryId = $category ? $category->getId() : null;
+?>
 <script>
 window.sdRecentlyViewed = {
-	productId: '<?php echo Mage::registry('current_product')->getId(); ?>',
-	maxDisplay: '<?php echo Mage::getStoreConfig('catalog/recently_products/viewed_count');?>'
+	productId: '<?php echo $productId; ?>',
+	categoryId: '<?php echo $categoryId; ?>',
+	maxDisplay: '<?php echo Mage::getStoreConfig('catalog/recently_products/viewed_count');?>',
+	insertAt: '<?php echo Mage::getStoreConfig('catalog/recently_products/insert_at');?>'
 }
 </script>
