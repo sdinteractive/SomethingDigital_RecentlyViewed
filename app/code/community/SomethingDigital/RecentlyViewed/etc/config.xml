@@ -28,6 +28,7 @@
         <catalog>
             <recently_products>
                 <insert_at>.col-right.sidebar</insert_at>
+                <insert_position>top</insert_position>
             </recently_products>
         </catalog>
     </default>
