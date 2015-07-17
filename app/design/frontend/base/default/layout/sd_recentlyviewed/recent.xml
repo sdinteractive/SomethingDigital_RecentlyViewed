@@ -5,7 +5,7 @@
 		<remove name="left.reports.product.viewed"/>
 		<remove name="right.reports.product.viewed"/>
 		<reference name="before_body_end">
-			<block type="reports/product_viewed" before="right.permanent.callout" name="sd.recently.viewed.products" template="sd_recentlyviewed/items.phtml" />
+			<block type="core/template" before="right.permanent.callout" name="sd.recently.viewed.products" template="sd_recentlyviewed/items.phtml" />
 		</reference>
 	</default>
 
@@ -27,7 +27,7 @@
 			<update handle="sdrecentlyviewed"/>
 		</reference>
 		<reference name="before_body_end">
-			<block name="sd.recently.viewed" type="reports/product_viewed" template="sd_recentlyviewed/product.phtml"/>
+			<block name="sd.recently.viewed" type="sd_recentlyviewed/viewed" template="sd_recentlyviewed/product.phtml"/>
 		</reference>
 	</catalog_product_view>
 

@@ -79,28 +79,8 @@ SomethingDigitalRecentlyViewed.prototype = {
 			return;
 		}
 
-		var html = rvTemplate.innerHTML.replace('{{items}}',this.getRenderedItems()),
-			position = sdRecentlyViewed.insertPosition;
-		
-		this.renderPosition(target, html, position);
-
-	},
-
-	renderPosition: function(target, html, position) {
-		switch(position) {
-			case "top":
-				$(target).insert({top: html});
-				break;
-			case "bottom":
-				$(target).insert({bottom: html});
-				break;
-			case "above":
-				$(target).insert({above: html});
-				break;
-			case "below":
-				$(target).insert({below: html});
-				break;
-		}
+		var html = rvTemplate.innerHTML.replace('{{items}}',this.getRenderedItems());
+		$(target).insert({top: html});
 
 	}
 }
