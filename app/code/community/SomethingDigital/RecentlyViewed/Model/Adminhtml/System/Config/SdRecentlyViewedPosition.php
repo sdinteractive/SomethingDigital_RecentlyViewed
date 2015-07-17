@@ -1,5 +1,5 @@
 <?php
-class SomethingDigital_RecentlyViewed_Model_Adminhtml_System_Config_SdRecentlyViewedPosition
+class SomethingDigital_RecentlyViewed_Model_Adminhtml_System_Config_sdRecentlyViewedPosition
 {
    public function toOptionArray()
    {

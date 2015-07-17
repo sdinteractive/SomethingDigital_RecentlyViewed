@@ -8,6 +8,11 @@
     <admin>
     </admin>
     <global>
+        <blocks>
+            <sd_recentlyviewed>
+                <class>SomethingDigital_RecentlyViewed_Block</class>
+            </sd_recentlyviewed>
+        </blocks>
     </global>
     <adminhtml>
     </adminhtml>
