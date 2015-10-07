@@ -12,7 +12,7 @@ Features
 
 - Target the location of the block in admin via CSS selector
 - Control the number of items displayed (uses default Magento value)
-- Disable writes to report tables (recommended to use in conjuction with [Quafzi_PerformanceTweaks](https://github.com/quafzi/magento-performance-tweaks)
+- Disable writes to report tables (recommended to use in conjunction with [Quafzi_PerformanceTweaks](https://github.com/quafzi/magento-performance-tweaks)
 
 
 Screenshots
