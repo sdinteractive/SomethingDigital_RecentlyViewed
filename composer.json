@@ -1,0 +1,18 @@
+{
+	"name": "sdinteractive/somethingdigital_recentlyviewed",
+	"license": "MIT",
+	"description": "Add LocalStorage-based recently viewed products",
+	"homepage": "https://github.com/sdinteractive/SomethingDigital_RecentlyViewed",
+	"type": "magento-module",
+	"require": {
+		"php": ">=5.3"
+	},
+	"authors": [
+        {
+            "name": "Something Digital",
+            "email": "info@somethingdigital.com",
+            "homepage": "http://www.somethingdigital.com/",
+            "role": "Author/Maintainer"
+        }
+    ]
+}
