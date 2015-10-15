@@ -8,11 +8,11 @@
 		"php": ">=5.3"
 	},
 	"authors": [
-        {
-            "name": "Something Digital",
-            "email": "info@somethingdigital.com",
-            "homepage": "http://www.somethingdigital.com/",
-            "role": "Author/Maintainer"
-        }
-    ]
+		{
+			"name": "Something Digital",
+			"email": "info@somethingdigital.com",
+			"homepage": "http://www.somethingdigital.com/",
+			"role": "Author/Maintainer"
+		}
+	]
 }
