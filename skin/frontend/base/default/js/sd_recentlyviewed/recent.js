@@ -39,11 +39,11 @@ SomethingDigitalRecentlyViewed.prototype = {
 		}
 
 		//get unique keys
-		var uniqueKeys = recentlyViewed.reduce(this.reduceRecent, []);
-
+		var uniqueKeys = recentlyViewed.reduce(this.reduceRecent, []),
+			index = uniqueKeys.indexOf(sdRecentlyViewed.productId);
 
 		//add if current product is not in the unique keys
-		if(uniqueKeys.indexOf(sdRecentlyViewed.productId) === -1 && $('recently-viewed')){
+		if(index === -1 && $('recently-viewed')){
 
 			recentlyViewed.push({
 				id: sdRecentlyViewed.productId,
@@ -53,6 +53,11 @@ SomethingDigitalRecentlyViewed.prototype = {
 			if(recentlyViewed.length > sdRecentlyViewed.maxDisplay){
 				recentlyViewed.shift();
 			}
+
+		//move to end if current product *is* in unique keys
+		} else {
+			var obj = recentlyViewed.splice(index, 1)[0];
+			recentlyViewed.push(obj);
 		}
 
 		return recentlyViewed;
