@@ -70,10 +70,12 @@ SomethingDigitalRecentlyViewed.prototype = {
 
 		return items.map(function(a){
 				// Don't render the current product since it is already being viewed on PDP
-				if (a.id == sdRecentlyViewed.productId) {
-					return '';
+				if (a){
+					if (a.id == sdRecentlyViewed.productId) {
+						return '';
+					}
+					return a.html;
 				}
-				return a.html;
 			}).join('');
 	},
 

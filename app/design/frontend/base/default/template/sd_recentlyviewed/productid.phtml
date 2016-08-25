@@ -3,12 +3,19 @@ $product    = Mage::registry('current_product');
 $category   = Mage::registry('current_category');
 $productId  = $product ? $product->getId() : null;
 $categoryId = $category ? $category->getId() : null;
+// The view count includes the current product being viewed on the PDP. 
+// Since the current product being viewed is not rendered in this list, the 
+// number of displayed recent products on the PDP is actually one less than 
+// the value for viewed_count of recent products. By adding one to max display 
+// count for the current product being viewed, the default Magento 
+// config values intuitively reflects the number of recent products visible on PDP.  
+$maxDisplay = Mage::getStoreConfig('catalog/recently_products/viewed_count') + 1;
 ?>
 <script>
 window.sdRecentlyViewed = {
-	productId: '<?php echo $productId; ?>',
-	categoryId: '<?php echo $categoryId; ?>',
-	maxDisplay: '<?php echo Mage::getStoreConfig('catalog/recently_products/viewed_count');?>',
-	insertAt: '<?php echo Mage::getStoreConfig('catalog/recently_products/insert_at');?>'
+    productId: '<?php echo $productId; ?>',
+    categoryId: '<?php echo $categoryId; ?>',
+    maxDisplay: '<?php echo $maxDisplay;?>',
+    insertAt: '<?php echo Mage::getStoreConfig('catalog/recently_products/insert_at');?>'
 }
 </script>
