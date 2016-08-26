@@ -26,8 +26,10 @@ SomethingDigitalRecentlyViewed.prototype = {
 	},
 
 	reduceRecent: function(memo,a){
-		if(memo.indexOf(a.id) === -1){
-			memo.push(a.id);
+		if (a && a.id){
+			if(memo.indexOf(a.id) === -1){
+				memo.push(a.id);
+			}
 		}
 		return memo;
 	},
@@ -67,7 +69,13 @@ SomethingDigitalRecentlyViewed.prototype = {
 		var items = this.getLoadedStorage();
 
 		return items.map(function(a){
-				return a.html;
+				// Don't render the current product since it is already being viewed on PDP
+				if (a){
+					if (a.id == sdRecentlyViewed.productId) {
+						return '';
+					}
+					return a.html;
+				}
 			}).join('');
 	},
 
