@@ -57,7 +57,7 @@ SomethingDigitalRecentlyViewed.prototype = {
 			}
 
 		//move to end if current product *is* in unique keys
-		} else {
+		} else if (index != -1) {
 			var obj = recentlyViewed.splice(index, 1)[0];
 			recentlyViewed.push(obj);
 		}
