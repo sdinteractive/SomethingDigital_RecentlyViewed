@@ -81,7 +81,7 @@ SomethingDigitalRecentlyViewed.prototype = {
 
 	render: function(){
 
-		if(!this.items || this.items.length < 1){
+		if(!this.items || this.items.length <= 1){
 			return;
 		}
 
